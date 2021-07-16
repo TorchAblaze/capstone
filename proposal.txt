@@ -1,0 +1,25 @@
+Name of Student: Tiffany
+
+Name of Project: Trippany
+
+Project's Purpose or Goal: (What will it do for users?)
+List the absolute minimum features the project requires to meet this purpose or goal:
+Allow users to pin places they've visited on a world map
+Allow users to post pics of places they visited/travelled with captions
+Users you can see all the pics they uploaded for a place they visited when they click on a pin
+
+What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
+Map Api's (Google, MapQuest, etc -- investigate options)
+JavaScript
+C# and MySQL
+Maybe react
+
+If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
+Allow users to make pictures/posts public or private
+Track what places are most often visited
+Allow users to post travel tips/warnings/recommendations for specific places they visited
+
+What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
+JavaScript
+C# and MySQL
+Maybe react
