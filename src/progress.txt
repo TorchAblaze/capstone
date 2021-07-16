@@ -1,2 +1,3 @@
 * Create a component tree - rough draft complete
 * Research elgible API's: deciding on an api and reading documentation
+* Sign up for API key
