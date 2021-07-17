@@ -10,7 +10,7 @@ An application that allows users to store photos, travel information, and track 
 
 ## Component Tree
 
-<img src="./src/img/Capstone.png" alt="diagram of React component tree" width="600"/>
+<img src="./src/img/Capstone.png" alt="diagram of React component tree" width="700"/>
 
 ## Setup/Installation Requirements
 
@@ -22,7 +22,7 @@ Software Requirements
 Open via Bash/GitBash:
 
 1. Clone this repository onto your computer:
-   `git clone https://github.com/TorchAblaze/tap-room.git`
+   `git clone https://github.com/TorchAblaze/capstone.git`
 2. Navigate into the `capstone` directory, and open in Visual Studio Code or preferred text editor
 3. Run `npm install` to install the dependencies
 4. Run `npm start` to view the application
