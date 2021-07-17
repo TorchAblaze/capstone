@@ -1,6 +1,6 @@
 # Capstone
 
-#### _Capstone Project for Epicodus, 7/2/2021_
+#### _Capstone Project for Epicodus, 7/16/2021_
 
 #### By _**Tiffany Greathead**_
 
@@ -10,7 +10,7 @@ An application that allows users to store photos, travel information, and track 
 
 ## Component Tree
 
-<img src="./src/img/capstone.png" alt="diagram of React component tree"/>
+<img src="./src/img/Capstone.png" alt="diagram of React component tree"/>
 
 ## Setup/Installation Requirements
 
