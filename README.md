@@ -1,5 +1,53 @@
+# Capstone
+
+#### _Capstone Project for Epicodus, 7/2/2021_
+
+#### By _**Tiffany Greathead**_
+
+## Description
+
+An application that allows users to store photos, travel information, and track their favorite places to visit.
+
+## Component Tree
+
+<img src="./src/img/capstone.png" alt="diagram of React component tree"/>
+
+## Setup/Installation Requirements
+
+Software Requirements
+
+1. Internet browser
+2. A code editor like VSCode or Atom to view or edit the codebase
+
+Open via Bash/GitBash:
+
+1. Clone this repository onto your computer:
+   `git clone https://github.com/TorchAblaze/tap-room.git`
+2. Navigate into the `capstone` directory, and open in Visual Studio Code or preferred text editor
+3. Run `npm install` to install the dependencies
+4. Run `npm start` to view the application
+
+## Known Bugs
+
+_This project is a work in progress_
+
+## Support and contact details
+
+_Please reach out through my GitHub account._
+
+## Technologies Used
+
+- Bootstrap
+- CSS
+- Firebase
+- HTML
+- JavaScript
+- Node
+- React
+
 # Getting Started with Create React App
 
+<details>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,3 +116,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+</details>
+
+### License
+
+MIT License
+
+Copyright (c) 2021 Tiffany Greathead
