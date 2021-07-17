@@ -1,22 +1,24 @@
 import React from "react";
 import Header from "./Header";
-import Signin from "./Signin";
 import TripControl from "./TripControl";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import Signin from "./Signin";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <React.Fragment>
+      {/* <Router> */}
       <Header />
-      <Switch>
-        <Route path="signin">
-          <Signin />
-        </Route>
-        <Route path="/">
-          <TripControl />
-        </Route>
-      </Switch>
-    </Router>
+      {/* <Switch>
+         <Route path="signin">
+           <Signin />
+         </Route>
+         <Route path="/"> */}
+      <TripControl />
+      {/* </Route>
+       </Switch>
+     </Router> */}
+    </React.Fragment>
   );
 }
 
