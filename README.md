@@ -10,7 +10,7 @@ An application that allows users to store photos, travel information, and track 
 
 ## Component Tree
 
-<img src="./src/img/Capstone.png" alt="diagram of React component tree" width="500"/>
+<img src="./src/img/Capstone.png" alt="diagram of React component tree" width="600"/>
 
 ## Setup/Installation Requirements
 
