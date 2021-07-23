@@ -4,12 +4,14 @@
 /node_modules
 /.pnp
 .pnp.js
+obj
 
 # testing
 /coverage
 
 # production
 /build
+bin
 
 # misc
 .DS_Store
@@ -18,6 +20,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
+appsettings.json
+.vscode
 
 npm-debug.log*
 yarn-debug.log*
