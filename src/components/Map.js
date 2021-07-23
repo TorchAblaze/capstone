@@ -2,13 +2,13 @@ import React from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
 const containerStyle = {
-  width: "400px",
-  height: "400px",
+  width: "900px",
+  height: "600px",
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523,
+  lat: 40.56,
+  lng: -102.021,
 };
 
 function Map() {
@@ -42,4 +42,4 @@ function Map() {
   );
 }
 
-export default React.memo(MyComponent);
+export default React.memo(Map);

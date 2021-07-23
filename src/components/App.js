@@ -1,8 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import TripControl from "./TripControl";
-// import Signin from "./Signin";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Map from "./Map";
 
 function App() {
   return (
@@ -14,6 +13,7 @@ function App() {
            <Signin />
          </Route>
          <Route path="/"> */}
+      <Map />
       <TripControl />
       {/* </Route>
        </Switch>
