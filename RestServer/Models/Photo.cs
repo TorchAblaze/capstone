@@ -12,7 +12,7 @@ namespace RestServer.Models
     [Required]
     public DateTime StartDate { get; set; } = DateTime.Now;
     public DateTime EndDate { get; set; } = DateTime.Now;
-    public string Description { get; set; }
+    public string Caption { get; set; }
     public string TripTips { get; set; }
   }
 }
