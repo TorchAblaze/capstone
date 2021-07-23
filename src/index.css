@@ -12,3 +12,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+fieldset {
+  width: 680px;
+  margin: auto;
+}
+
+input {
+  width: 700px;
+  display: inline-block;
+  margin: 20px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: rgba(134, 133, 133, 0.664);
+  border-width: 2px;
+  font-size: medium;
+  background-color: rgba(255, 255, 255, 0.507);
+}
+
+label {
+  display: block;
+}
+
+input.trip-date {
+  width: 400px;
+  margin-right: 2%;
+}
