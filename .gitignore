@@ -22,6 +22,7 @@ bin
 .env.production.local
 appsettings.json
 .vscode
+api.js
 
 npm-debug.log*
 yarn-debug.log*
