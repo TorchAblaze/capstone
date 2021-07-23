@@ -8,6 +8,7 @@ Done
 
 To Do
 * Make Map pinable
+* Center map
 * Add a sign in/out/create account
 * Research how to upload images from a computer
 * Figure out what to do with C# files
