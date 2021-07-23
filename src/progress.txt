@@ -1,3 +1,14 @@
+Done
 * Create a component tree - rough draft complete
 * Research elgible API's: deciding on an api and reading documentation
 * Sign up for API key
+* App Google map API
+* Add C# stuff and ignore it for later
+* Forget to make commits
+
+To Do
+* Make Map pinable
+* Add a sign in/out/create account
+* Research how to upload images from a computer
+* Figure out what to do with C# files
+* Add styling
