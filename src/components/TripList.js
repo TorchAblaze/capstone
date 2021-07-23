@@ -10,7 +10,7 @@ function TripList(props) {
       {props.tripList.map((trip) => (
         <Trip
           whenTripClicked={props.onTripSelection}
-          destination={trip.destination}
+          name={trip.name}
           // photo={trip.photo}
           id={trip.id}
           key={trip.id}

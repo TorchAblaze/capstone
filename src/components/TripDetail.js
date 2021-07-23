@@ -8,7 +8,7 @@ function TripDetail(props) {
     <React.Fragment>
       <hr />
       <h1>Trip Memories</h1>
-      <h3>{trip.destination}</h3>
+      <h3>{trip.name}</h3>
       {/* <img>{trip.photo}</img> */}
       {/* Refactor later: how to upload photos? Loop through photo collection and put each inside an image tag*/}
       <hr />
