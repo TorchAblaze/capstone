@@ -7,7 +7,9 @@ Done
 * Forget to make commits
 
 To Do
-* Make Map pinable
+* Make Map pinable:
+  1. Get coords from user somehow (clicking?)
+  2. Store those coords inside marker 
 * Center map
 * Add a sign in/out/create account
 * Research how to upload images from a computer
