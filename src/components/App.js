@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import TripControl from "./TripControl";
-import Map from "./Map";
+import Pin from "./Pin";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
            <Signin />
          </Route>
          <Route path="/"> */}
-      <Map />
+      <Pin />
       <TripControl />
       {/* </Route>
        </Switch>
