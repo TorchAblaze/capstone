@@ -1,90 +1,56 @@
 import React from "react";
-import { compose, withProps, withStateHandlers } from "recompose";
-import {
-  GoogleMap,
-  Marker,
-  withGoogleMap,
-  withScriptjs,
-  useJSApiLoader,
-} from "@react-google-maps";
+import { GoogleMap, useJsApiLoader, InfoBox } from "@react-google-maps/api";
 import { API_KEY } from "../api.js";
-import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
 
-// const { compose, withProps, withStateHandlers } = require("recompose");
-// const { withScriptjs, withGoogleMap, GoogleMap } = require("react-google-maps");
-// const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
-const demoFancyMapStyles = require("./demoFancyMapStyles.json");
+const containerStyle = {
+  width: "900px",
+  height: "600px",
+};
 
-const StyledMapWithAnInfoBox = compose(
-  withProps({
-    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
-    center: { lat: 25.03, lng: 121.6 },
-  }),
-  withStateHandlers(
-    () => ({
-      isOpen: false,
-    }),
-    {
-      onToggleOpen:
-        ({ isOpen }) =>
-        () => ({
-          isOpen: !isOpen,
-        }),
-    }
-  ),
-  withScriptjs,
-  withGoogleMap
-)((props) => (
-  <GoogleMap
-    defaultZoom={5}
-    defaultCenter={props.center}
-    defaultOptions={{ styles: demoFancyMapStyles }}
-  >
-    <InfoBox
-      defaultPosition={
-        new google.maps.LatLng(props.center.lat, props.center.lng)
-      }
-      options={{ closeBoxURL: ``, enableEventPropagation: true }}
-      options={{ closeBoxURL: ``, enableEventPropagation: true }}
+const center = {
+  lat: 40.56,
+  lng: -102.021,
+};
+
+function Map() {
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: API_KEY,
+  });
+
+  const [map, setMap] = React.useState(null);
+
+  const onLoad = React.useCallback(function callback(map) {
+    const bounds = new window.google.maps.LatLngBounds();
+    map.fitBounds(bounds);
+    setMap(map);
+  }, []);
+
+  const options = { closeBoxURL: "", enableEventPropagation: true };
+
+  const onUnmount = React.useCallback(function callback(map) {
+    setMap(map);
+  }, []);
+
+  return isLoaded ? (
+    <GoogleMap
+      id="InfoBox-example"
+      containerStyle={containerStyle}
+      zoom={10}
+      center={center}
+      onLoad={onLoad}
+      onUnmount={onUnmount}
     >
-      <div
-        style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}
-      >
-        <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
-          Hello, Taipei!
-        </div>
-      </div>
-    </InfoBox>
-    <Marker
-      position={{ lat: 22.6273, lng: 120.3014 }}
-      onClick={props.onToggleOpen}
-    >
-      {props.isOpen && (
-        <InfoBox
-          onCloseClick={props.onToggleOpen}
-          options={{ closeBoxURL: ``, enableEventPropagation: true }}
-        >
-          <div
-            style={{
-              backgroundColor: `yellow`,
-              opacity: 0.75,
-              padding: `12px`,
-            }}
-          >
-            <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
-              Hello, Kaohsiung!
-            </div>
+      <InfoBox onLoad={onLoad} options={options} position={center}>
+        <div style={{ backgroundColor: "yellow", opacity: 0.75, padding: 12 }}>
+          <div style={{ fontSize: 16, fontColor: "#08233B" }}>
+            Hello, World!
           </div>
-        </InfoBox>
-      )}
-    </Marker>
-  </GoogleMap>
-));
-
-{
-  /* <StyledMapWithAnInfoBox />; */
+        </div>
+      </InfoBox>
+    </GoogleMap>
+  ) : (
+    <div>Loading...</div>
+  );
 }
-export default StyledMapWithAnInfoBox;
+export default React.memo(Map);
