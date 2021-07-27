@@ -18,7 +18,8 @@ fieldset {
   margin: auto;
 }
 
-input {
+input,
+textarea {
   width: 700px;
   display: inline-block;
   margin: 20px;
