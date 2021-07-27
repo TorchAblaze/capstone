@@ -7,7 +7,18 @@ function NewTripForm(props) {
     event.preventDefault();
     props.onNewTripCreation({
       name: event.target.name.value,
-      // photo: event.target.photo.value,
+      startDate: event.target.startDate.value,
+      endDate: event.target.endDate.value,
+      tips: event.target.tips.value,
+      photoDate1: event.target.photoDate1.value,
+      photo1: event.target.photo1.value,
+      caption1: event.target.caption1.value,
+      photoDate2: event.target.photoDate2.value,
+      photo2: event.target.photo2.value,
+      caption2: event.target.caption2.value,
+      photoDate3: event.target.photoDate3.value,
+      photo3: event.target.photo3.value,
+      caption3: event.target.caption3.value,
       id: v4(),
     });
   }
@@ -19,35 +30,38 @@ function NewTripForm(props) {
         <input type="text" name="name" placeholder="Name your trip" required />
         <fieldset>
           <legend>Trip Dates</legend>
-          <label for="start-date" className="trip-date">
+          <label for="startDate" className="trip-date">
             Start Date
           </label>
-          <input
-            type="date"
-            name="start-date"
-            className="trip-date"
-            placeholder="Trip Start Date"
-            required
-          />
-          <label for="end-date" className="trip-date">
+          <input type="date" name="startDate" className="trip-date" required />
+          <label for="endDate" className="trip-date">
             End Date
           </label>
-          <input
-            type="date"
-            name="end-date"
-            className="trip-date"
-            placeholder="Trip End Date"
-            required
-          />
+          <input type="date" name="endDate" className="trip-date" required />
         </fieldset>
         <label for="tips">Tips</label>
         <input type="text" name="tips" placeholder="Travel Tips" />
-        {/* <input type="image" name="photo" /> */}
-        {/* Add button that will let you upload more photos */}
-        <label for="photo-date">Date</label>
-        <input type="date" name="photo-date" placeholder="Date of Photo" />
-        <label for="caption">Caption</label>
-        <input type="text" name="caption" placeholder="Photo Caption" />
+
+        <label for="photoDate1">Photo Date</label>
+        <input type="date" name="photoDate1" />
+        <label for="photo1">Photo</label>
+        <input type="text" name="photo1" placeholder="Image Address URL" />
+        <label for="caption1">Caption</label>
+        <input type="text" name="caption1" placeholder="Photo Caption" />
+
+        <label for="photoDate2">Photo Date</label>
+        <input type="date" name="photoDate2" />
+        <label for="photo2">Photo</label>
+        <input type="text" name="photo2" placeholder="Image Address URL" />
+        <label for="caption2">Caption</label>
+        <input type="text" name="caption2" placeholder="Photo Caption" />
+
+        <label for="photoDate3">Photo Date</label>
+        <input type="date" name="photoDate3" />
+        <label for="photo3">Photo</label>
+        <input type="text" name="photo3" placeholder="Image Address URL" />
+        <label for="caption3">Caption</label>
+        <input type="text" name="caption3" placeholder="Photo Caption" />
         <br />
         <button type="submit">Add Trip</button>
       </form>
