@@ -4,7 +4,7 @@ import React from "react";
 function Header() {
   return (
     <React.Fragment>
-      <h1>Tripany</h1>
+      <h1>Trippany</h1>
       {/* <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">Navbar</Navbar.Brand>
