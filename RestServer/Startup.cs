@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RestServer.Models;
-using Microsoft.AspNetCore.Identity;
 
 namespace RestServer
 {
@@ -14,8 +13,8 @@ namespace RestServer
     public Startup(IWebHostEnvironment env)
     {
       var builder = new ConfigurationBuilder()
-          .SetBasePath(env.ContentRootPath)
-          .AddJsonFile("appsettings.json");
+        .SetBasePath(env.ContentRootPath)
+        .AddJsonFile("appsettings.json");
       Configuration = builder.Build();
     }
 
@@ -28,31 +27,12 @@ namespace RestServer
       services.AddEntityFrameworkMySql()
         .AddDbContext<RestServerContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
-
-      services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<RestServerContext>()
-                .AddDefaultTokenProviders();
-
-      services.Configure<IdentityOptions>(options =>
-    {
-        options.Password.RequireDigit = false;
-        options.Password.RequiredLength = 0;
-        options.Password.RequireLowercase = false;
-        options.Password.RequireNonAlphanumeric = false;
-        options.Password.RequireUppercase = false;
-        options.Password.RequiredUniqueChars = 0;
-    });
     }
 
     public void Configure(IApplicationBuilder app)
     {
       app.UseDeveloperExceptionPage();
-
-      app.UseAuthentication(); 
-
       app.UseRouting();
-
-      app.UseAuthorization();
 
       app.UseEndpoints(routes =>
       {
@@ -60,10 +40,10 @@ namespace RestServer
       });
 
       app.UseStaticFiles();
-
+      
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Trippany");
+        await context.Response.WriteAsync("TRIPPANY");
       });
     }
   }
