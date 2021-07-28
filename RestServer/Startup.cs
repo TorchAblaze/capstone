@@ -1,49 +1,58 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using RestServer.Models;
 
 namespace RestServer
 {
   public class Startup
   {
-    public Startup(IWebHostEnvironment env)
+    readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+    public Startup(IConfiguration configuration)
     {
-      var builder = new ConfigurationBuilder()
-        .SetBasePath(env.ContentRootPath)
-        .AddJsonFile("appsettings.json");
-      Configuration = builder.Build();
+      Configuration = configuration;
     }
 
-    public IConfigurationRoot Configuration { get; set; }
+    public IConfiguration Configuration { get; }
 
+    // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddMvc();
 
-      services.AddEntityFrameworkMySql()
-        .AddDbContext<RestServerContext>(options => options
-        .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
+      services.AddControllers();
+      services.AddDbContext<RestServerContext>(options => options
+        .UseMySql(Configuration["ConnectionStrings:DefaultConnection"],
+        ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
+      services.AddCors(options =>
+        {
+          options.AddPolicy(name: MyAllowSpecificOrigins,
+            builder =>
+            {
+              builder.WithOrigins("http://localhost:3000/");
+            });
+        });
     }
 
-    public void Configure(IApplicationBuilder app)
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-      app.UseDeveloperExceptionPage();
+      if (env.IsDevelopment())
+      {
+        app.UseDeveloperExceptionPage();
+      }
+
+      app.UseHttpsRedirection();
+
       app.UseRouting();
 
-      app.UseEndpoints(routes =>
-      {
-        routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-      });
+      app.UseAuthorization();
 
-      app.UseStaticFiles();
-      
-      app.Run(async (context) =>
+      app.UseEndpoints(endpoints =>
       {
-        await context.Response.WriteAsync("TRIPPANY");
+        endpoints.MapControllers();
       });
     }
   }
