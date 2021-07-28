@@ -7,10 +7,31 @@ class TripControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      error: null,
+      isLoaded: false,
       formVisbleOnPage: false,
       fullTripList: [],
       selectedTrip: null,
     };
+  }
+
+  tripControlDidMount() {
+    fetch("/trips")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            fullTripList: result.fullTripList,
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        }
+      );
   }
 
   handleClick = () => {
@@ -41,8 +62,13 @@ class TripControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
+    const { error, isLoaded } = this.state;
 
-    if (this.state.selectedTrip != null) {
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else if (this.state.selectedTrip != null) {
       currentlyVisibleState = <TripDetail trip={this.state.selectedTrip} />;
       buttonText = "Return to Trip List";
     } else if (this.state.formVisbleOnPage) {
@@ -61,7 +87,6 @@ class TripControl extends React.Component {
     }
     return (
       <React.Fragment>
-        {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
