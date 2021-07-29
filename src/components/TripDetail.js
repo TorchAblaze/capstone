@@ -7,7 +7,7 @@ function TripDetail(props) {
 
   return (
     <React.Fragment>
-      <StaticMap />
+      <StaticMap position={{ lat: trip.lat, lng: trip.lng }} />
       <hr />
       <h2>{trip.name}</h2>
       <p>
