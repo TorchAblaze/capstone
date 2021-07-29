@@ -21,5 +21,7 @@ namespace RestServer.Models
     public string PhotoDate3 { get; set; }
     public string Photo3 { get; set; }
     public string Caption3 { get; set; }
+    public string Lat { get; set; }
+    public string Lng { get; set; }
   }
 }
