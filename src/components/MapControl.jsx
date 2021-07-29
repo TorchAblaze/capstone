@@ -22,6 +22,8 @@ const MapControl = () => {
     fetch("http://localhost:5000/trips", {
       method: "POST",
       body: formData,
+    }).then(() => {
+      window.location.href = "http://localhost:3000/trips";
     });
   };
 
