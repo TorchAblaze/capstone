@@ -1,5 +1,4 @@
 import React from "react";
-import { v4 } from "uuid";
 import PropTypes from "prop-types";
 
 function NewTripForm(props) {
@@ -19,7 +18,6 @@ function NewTripForm(props) {
       photoDate3: event.target.photoDate3.value,
       photo3: event.target.photo3.value,
       caption3: event.target.caption3.value,
-      id: v4(),
     });
   }
   return (
@@ -33,11 +31,11 @@ function NewTripForm(props) {
           <label for="startDate" className="trip-date">
             Start Date
           </label>
-          <input type="date" name="startDate" className="trip-date" required />
+          <input type="date" name="startDate" className="trip-date" />
           <label for="endDate" className="trip-date">
             End Date
           </label>
-          <input type="date" name="endDate" className="trip-date" required />
+          <input type="date" name="endDate" className="trip-date" />
         </fieldset>
         <label for="tips">Tips</label>
         <textarea name="tips" placeholder="Travel Tips" />
