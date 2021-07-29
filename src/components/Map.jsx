@@ -12,18 +12,16 @@ const center = {
   lng: -102.021,
 };
 
-const Map = () => {
+const Map = (props) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: API_KEY,
   });
 
-  const [position, setPosition] = useState(undefined);
-
   const handleClick = (e) => {
     console.log(`Handling your click!`);
     const { lat, lng } = e.latLng;
-    setPosition({
+    props.handlePosition({
       lat: lat(),
       lng: lng(),
     });
@@ -38,7 +36,7 @@ const Map = () => {
       center={center}
       zoom={5}
     >
-      {position ? <Marker position={position} /> : undefined}
+      {props.position ? <Marker position={props.position} /> : undefined}
     </GoogleMap>
   ) : (
     <div>Loading...</div>
