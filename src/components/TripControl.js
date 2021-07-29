@@ -15,14 +15,14 @@ class TripControl extends React.Component {
     };
   }
 
-  tripControlDidMount() {
-    fetch("/trips")
+  componentDidMount() {
+    fetch("http://localhost:5000/trips")
       .then((res) => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            fullTripList: result.fullTripList,
+            fullTripList: result,
           });
         },
         (error) => {
@@ -87,6 +87,7 @@ class TripControl extends React.Component {
     }
     return (
       <React.Fragment>
+        {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
