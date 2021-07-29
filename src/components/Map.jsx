@@ -36,7 +36,7 @@ const Map = () => {
       onClick={handleClick}
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={10}
+      zoom={5}
     >
       {position ? <Marker position={position} /> : undefined}
     </GoogleMap>
