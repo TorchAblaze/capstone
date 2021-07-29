@@ -26,7 +26,9 @@ namespace trip.Migrations
                     Caption2 = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     PhotoDate3 = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     Photo3 = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-                    Caption3 = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true)
+                    Caption3 = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Lat = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Lng = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true)
                 },
                 constraints: table =>
                 {
