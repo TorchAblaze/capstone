@@ -7,20 +7,18 @@ const containerStyle = {
   height: "300px",
 };
 
-const center = {
-  lat: 40.56,
-  lng: -102.021,
-};
-
 const StaticMap = (props) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: API_KEY,
   });
 
+  const { lat, lng } = props.position;
+  const target = { lat: parseFloat(lat), lng: parseFloat(lng) };
+
   return isLoaded ? (
-    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-      {props.position ? <Marker position={props.position} /> : undefined}
+    <GoogleMap mapContainerStyle={containerStyle} center={target} zoom={15}>
+      {props.position ? <Marker position={target} /> : undefined}
     </GoogleMap>
   ) : (
     <div>Loading...</div>
