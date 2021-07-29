@@ -14,7 +14,6 @@ function Trip(props) {
 
 Trip.propTypes = {
   name: PropTypes.string.isRequired,
-  // photo: PropTypes.string.isRequired,
   id: PropTypes.string,
   whenTripClicked: PropTypes.func,
 };
