@@ -1,19 +1,19 @@
 import React from "react";
-// import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
     <React.Fragment>
       <h1>Trippany</h1>
-      {/* <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="/">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/signin">Sign In</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar> */}
+      <ul className="main-nav">
+        <li>
+          <NavLink exact to="/" activeStyle={{ background: "tomato" }}>
+            Home
+          </NavLink>
+          <NavLink to="/trips">Trips</NavLink>
+          <NavLink to="/trip-form">Add Trip</NavLink>
+        </li>
+      </ul>
     </React.Fragment>
   );
 }
