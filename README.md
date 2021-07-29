@@ -37,7 +37,6 @@ _Please reach out through my GitHub account._
 
 ## Technologies Used
 
-- Bootstrap
 - CSS
 - Firebase
 - HTML
