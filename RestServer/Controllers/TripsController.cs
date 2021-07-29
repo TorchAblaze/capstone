@@ -20,17 +20,27 @@ namespace RestServer.Controllers
     private async Task<Trip> TripWithId(int id) => await _db.Trips.FindAsync(id);
 
     [HttpGet("trips/")]
-    public async Task<ActionResult<IEnumerable<Trip>>> GetAllTrips() => await _db.Trips.ToListAsync();
+    public async Task<ActionResult<IEnumerable<Trip>>> Get() => await _db.Trips.ToListAsync();
 
     [HttpGet("trips/{id}")]
-    public async Task<ActionResult<Trip>> GetTrip(int id) => await TripWithId(id);
+    public async Task<ActionResult<Trip>> GetTrip(int id)
+    {
+      var trip = await _db.Trips.FindAsync(id);
+
+      if (trip == null)
+      {
+        return NotFound();
+      }
+      
+      return trip;
+    }
 
     [HttpPost("trips/")]
-    public async Task<ActionResult<Trip>> PostTrip(Trip trip)
+    public async Task<ActionResult<Trip>> Post(Trip trip)
     {
       _db.Trips.Add(trip);
       await _db.SaveChangesAsync();
-      return CreatedAtAction(nameof(TripWithId), new { id = trip.Id }, trip);
+      return CreatedAtAction("Post", new { id = trip.Id }, trip);
     }
 
     [HttpPut("{id}")]
