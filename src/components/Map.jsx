@@ -21,10 +21,12 @@ const Map = (props) => {
   const handleClick = (e) => {
     console.log(`Handling your click!`);
     const { lat, lng } = e.latLng;
-    props.handlePosition({
-      lat: lat(),
-      lng: lng(),
-    });
+    if (props.handlePosition) {
+      props.handlePosition({
+        lat: lat(),
+        lng: lng(),
+      });
+    }
   };
 
   console.log(`Rendering through a map component`);
