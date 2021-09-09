@@ -47,7 +47,7 @@ Open via Bash/GitBash:
      - `dotnet tool install --global dotnet-ef` to install EF Core tools
      - `dotnet ef migrations add Initial` and `dotnet ef database update`
      - `dotnet run` to run the project
-       - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the console app
+       - Note: `dotnet run` restores and builds the project, so you can use this single command to start the console app
 6. Navigate back to the `capstone` directory and run `npm start` to view the application
 7. Visit the application via web browser at: `localhost:3000/`
 
