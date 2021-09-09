@@ -38,11 +38,15 @@ _Please reach out through my GitHub account._
 ## Technologies Used
 
 - CSS
-- Firebase
 - HTML
 - JavaScript
 - Node
 - React
+- C#
+- .NET 5 SDK
+- ASP.NET
+- Entity Framework Core
+- MySQL
 
 # Getting Started with Create React App
 
