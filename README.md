@@ -34,7 +34,7 @@ Open via Bash/GitBash:
    ```
      {
         "ConnectionStrings": {
-           "DefaultConnection": "Server=localhost;Port=3306;database=tiffany_greathead;uid=root;pwd=<password>;"
+           "DefaultConnection": "Server=localhost;Port=3306;database=capstone;uid=root;pwd=<password>;"
          }
      }
    ```
@@ -46,8 +46,8 @@ Open via Bash/GitBash:
      - `dotnet build` to build the project and its dependencies into a set of binaries
      - `dotnet tool install --global dotnet-ef` to install EF Core tools
      - `dotnet ef migrations add Initial` and `dotnet ef database update`
-   - Run the command `dotnet run` to run the project
-   - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the console app
+     - `dotnet run` to run the project
+       - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the console app
 6. Navigate back to the `capstone` directory and run `npm start` to view the application
 7. Visit the application via web browser at: `localhost:3000/`
 
