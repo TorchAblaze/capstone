@@ -6,7 +6,7 @@
 
 ## Description
 
-An application that allows users to store photos, travel information, and track their favorite places to visit. Users will need an image URL to add photos. To create image URLs for you personal photos, you can create a free account with apps such as [flickr](https://www.flickr.com/photos/flickr/) or [imgur](https://imgur.com/). Instructions for finding the image URLs for these apps are listed below:
+An application that allows users to store photos, travel information, and track their favorite places to visit. Users will need an image URL to add photos. To create an image URL for personal photos, sign up for a free account with apps such as [flickr](https://www.flickr.com/photos/flickr/) or [imgur](https://imgur.com/). Instructions for locating the image URL after uploading the desired photos to these apps are listed below:
 
 - [flickr](https://help.flickr.com/en_us/share-or-embed-flickr-photos-or-albums-rJBx6mjyX)
 - [imgur](https://help.imgur.com/hc/en-us/articles/115000524806-Sharing-Posts-GIFs-GIFvs-and-Images-)
