@@ -28,7 +28,28 @@ Open via Bash/GitBash:
    `git clone https://github.com/TorchAblaze/capstone.git`
 2. Navigate into the `capstone` directory, and open in Visual Studio Code or preferred text editor
 3. Run `npm install` to install the dependencies
-4. Run `npm start` to view the application
+4. To setup a SQL database using MySQL:
+   - Create an `appsettings.json` file in the `capstone/RestServer` directory
+   - Copy the text box below and paste into the `appsettings.json` file, replacing `<password>` with your MySQL password:
+   ```
+     {
+        "ConnectionStrings": {
+           "DefaultConnection": "Server=localhost;Port=3306;database=tiffany_greathead;uid=root;pwd=<password>;"
+         }
+     }
+   ```
+   - Open your terminal and run the command: `mysql -uroot -p<mysql_password>` (replace `<mysql_password>` with your MySQL password) and select the enter key to launch MySQL servers
+5. To run the console app:
+   - Navigate to `capstone/RestServer` in your command line
+   - Run the commands:
+     - `dotnet restore` to restore the dependencies that are listed in `Factory.csproj`
+     - `dotnet build` to build the project and its dependencies into a set of binaries
+     - `dotnet tool install --global dotnet-ef` to install EF Core tools
+     - `dotnet ef migrations add Initial` and `dotnet ef database update`
+   - Run the command `dotnet run` to run the project
+   - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the console app
+6. Navigate back to the `capstone` directory and run `npm start` to view the application
+7. Visit the application via web browser at: `localhost:3000/`
 
 ## Known Bugs
 
