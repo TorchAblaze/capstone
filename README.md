@@ -8,8 +8,8 @@
 
 An application that allows users to store photos, travel information, and track their favorite places to visit. Users will need an image URL to add photos. To create image URLs for you personal photos, you can create a free account with apps such as <a href="https://www.flickr.com/photos/flickr/" target="_blank">flickr</a> or <a href="https://imgur.com/" target="_blank">imgur</a>. Instructions for finding the image URLs for these apps are listed below:
 
-- <a href=">https://help.flickr.com/en_us/share-or-embed-flickr-photos-or-albums-rJBx6mjyX" target="_blank">flickr</a>
-- <a href="https://help.imgur.com/hc/en-us/articles/115000524806-Sharing-Posts-GIFs-GIFvs-and-Images-" target="_blank">imgur</a>
+- <a href=">https://help.flickr.com/en_us/share-or-embed-flickr-photos-or-albums-rJBx6mjyX" target="blank">flickr</a>
+- [imgur](https://help.imgur.com/hc/en-us/articles/115000524806-Sharing-Posts-GIFs-GIFvs-and-Images-){:target="\_blank"}
 
 ## Component Tree
 
